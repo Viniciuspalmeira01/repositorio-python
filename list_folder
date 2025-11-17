@@ -1,0 +1,21 @@
+import os 
+import shutil
+
+
+home = "/home/vinicius" #pasta inicial
+extensão = "." #extensão do arquivo que deseja enviar para uma outra pasta
+
+#diretório atual: 
+diretorio_atual = os.getcwd()
+
+os.chdir(diretorio_atual)
+
+lista_arquivos = os.listdir(diretorio_atual)
+
+#movendo um arquivo.
+for arquivo in os.listdir(diretorio_atual):
+    if arquivo.endswith(extensão):
+        origem = os.path.join(diretorio_atual, arquivo)
+        destino = os.path.join("/home/vinicius", arquivo)
+        shutil.move(origem,destino)
+    
